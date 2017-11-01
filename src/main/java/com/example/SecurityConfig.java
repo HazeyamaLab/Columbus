@@ -1,5 +1,6 @@
 package com.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -8,8 +9,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 
+import com.example.service.LoginUserDetails;
+import com.example.service.LoginUserDetailsService;
+
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
+	
+	@Autowired LoginUserDetailsService userDetailsService;
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception{
@@ -31,15 +37,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.passwordParameter("password")
 			.and()
 			.logout()
-				.logoutSuccessUrl("/loginForm");
-			/*.and()
+				.logoutSuccessUrl("/loginForm")
+			.and()
 			.rememberMe()
-			.useSecureCookie(true)
 			.key("mallow")
 			.rememberMeParameter("remember-me")
 			.rememberMeCookieName("remember-me")
 			.userDetailsService(userDetailsService);
-			*/
+			
 	}
 	
 	@Bean

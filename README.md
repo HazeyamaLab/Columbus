@@ -1,7 +1,13 @@
 # Columbus
 Travel Log System
 
-##機能要件
+## 開発環境
+- Java 1.8
+- MySQL 5.7
+- Spring Boot 1.5
+- Maven 4.0
+
+##　 機能要件
 - ユーザ作成
 - ユーザ認証
 - ユーザページ

@@ -7,7 +7,7 @@ Travel Log System
 - Spring Boot 1.5
 - Maven 4.0
 
-##　 機能要件
+## 機能要件
 - ユーザ作成
 - ユーザ認証
 - ユーザページ

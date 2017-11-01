@@ -26,13 +26,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.loginProcessingUrl("/login")
 				.loginPage("/loginForm")
 				.failureUrl("/loginForm?error")
-				.defaultSuccessUrl("/manu",true)
+				.defaultSuccessUrl("/userMenu",true)
 				.usernameParameter("id")
 				.passwordParameter("password")
 			.and()
 			.logout()
-				.logoutSuccessUrl("/loginFprm");
-			
+				.logoutSuccessUrl("/loginForm");
+			/*.and()
+			.rememberMe()
+			.useSecureCookie(true)
+			.key("mallow")
+			.rememberMeParameter("remember-me")
+			.rememberMeCookieName("remember-me")
+			.userDetailsService(userDetailsService);
+			*/
 	}
 	
 	@Bean

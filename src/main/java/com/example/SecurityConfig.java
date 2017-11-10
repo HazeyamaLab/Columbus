@@ -1,5 +1,5 @@
 package com.example;
-
+/*
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -52,3 +52,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		return new Pbkdf2PasswordEncoder();
 	}
 }
+*/
